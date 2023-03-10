@@ -1,5 +1,7 @@
 package com.example.demo.dto;
 
+import java.util.Date;
+
 public class CartDto {
 
 	private int id;
@@ -10,6 +12,8 @@ public class CartDto {
 	private int food_quantity;
 	private int user_id;
 	private boolean checkedout;
+	private Date food_added_on;
+	
 	
 	public int getId() {
 		return id;
@@ -59,10 +63,16 @@ public class CartDto {
 	public void setCheckedout(boolean checkedout) {
 		this.checkedout = checkedout;
 	}
+	public Date getFood_added_on() {
+		return food_added_on;
+	}
+	public void setFood_added_on(Date food_added_on) {
+		this.food_added_on = food_added_on;
+	}
 	public CartDto() {
 	}
 	public CartDto(int id, String food_name, String food_type, String food_image, int food_price, int food_quantity,
-			int user_id, boolean checkedout) {
+			int user_id, boolean checkedout , Date food_added_on) {
 		this.id = id;
 		this.food_name = food_name;
 		this.food_type = food_type;
@@ -71,6 +81,7 @@ public class CartDto {
 		this.food_quantity = food_quantity;
 		this.user_id = user_id;
 		this.checkedout = checkedout;
+		this.food_added_on = food_added_on;
 	}
 	
 	

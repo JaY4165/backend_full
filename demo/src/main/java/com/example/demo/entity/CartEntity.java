@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.GeneratedValue;
 
 
@@ -41,6 +45,11 @@ public class CartEntity {
 	
 	@Column(name = "checkedout")
 	private boolean checkedout;
+	
+	@Column(name = "food_added_on")
+    @Temporal(TemporalType.DATE)
+    private Date food_added_on;
+
 
 	public int getId() {
 		return id;
@@ -105,13 +114,22 @@ public class CartEntity {
 	public void setCheckedout(boolean checkedout) {
 		this.checkedout = checkedout;
 	}
+	
+	public Date getFood_added_on() {
+		return food_added_on;
+	}
+
+	public void setFood_added_on(Date food_added_on) {
+		this.food_added_on = food_added_on;
+	}
+
 
 	public CartEntity() {
 		
 	}
 
 	public CartEntity(int id, String food_name, String food_type, String food_image, int food_price, int food_quantity,
-			UsersEntity user, boolean checkedout) {
+			UsersEntity user, boolean checkedout, Date food_added_on) {
 		this.id = id;
 		this.food_name = food_name;
 		this.food_type = food_type;
@@ -120,7 +138,10 @@ public class CartEntity {
 		this.food_quantity = food_quantity;
 		this.user = user;
 		this.checkedout = checkedout;
+		this.food_added_on = food_added_on;
 	}
+
+	
 	
 	 
 	

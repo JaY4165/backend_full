@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.CartDto;
+import com.example.demo.response.CartResponse;
 import com.example.demo.response.ResponseClass;
 import com.example.demo.service.CartServiceInterface;
 
@@ -25,9 +26,9 @@ public class CartController {
 	
 	
 	@GetMapping("/{user_id}")
-	 public ResponseEntity<ResponseClass> getCartByUserId(@PathVariable int user_id) {
+	 public ResponseEntity<CartResponse> getCartByUserId(@PathVariable int user_id) {
         List<CartDto> cartDTOs = cartService.getCartsByUserId(user_id);
-        ResponseClass response = new ResponseClass();
+        CartResponse response = new CartResponse();
         response.setData(cartDTOs);
         response.setStatus(200);
         response.setMessage("Cart items fetched successfully");

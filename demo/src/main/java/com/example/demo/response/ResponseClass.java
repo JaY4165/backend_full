@@ -1,8 +1,6 @@
 package com.example.demo.response;
 
 
-
-
 public class ResponseClass {
 	
 	private int status;
@@ -11,7 +9,6 @@ public class ResponseClass {
 	
 	private int userId;
 	
-	private Object data;
 	
 
 	
@@ -40,14 +37,6 @@ public class ResponseClass {
 		this.message = message;
 	}
 	
-	public Object getData() {
-		return data;
-	}
-
-	public void setData(Object data) {
-		this.data = data;
-	}
-	
 	
 
 	public ResponseClass() {
@@ -64,9 +53,6 @@ public class ResponseClass {
 		this.userId = userId;
 	}
 	
-	public ResponseClass(int status, String message, Object data) {
-		this.status = status;
-		this.message = message;
-		this.data = data;
-	}
+	
+	
 }
