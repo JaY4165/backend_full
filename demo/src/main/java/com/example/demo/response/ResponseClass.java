@@ -8,10 +8,6 @@ public class ResponseClass {
 	private String message;
 	
 	private int userId;
-	
-	
-
-	
 
 	public int getUserId() {
 		return userId;

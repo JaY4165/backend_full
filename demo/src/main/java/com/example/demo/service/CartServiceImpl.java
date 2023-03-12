@@ -16,7 +16,6 @@ public class CartServiceImpl implements CartServiceInterface{
 	@Autowired
 	CartRepository cartRepo;
 
-
 	@Override
 	 public List<CartDto> getCartsByUserId(int user_id) {
         List<CartEntity> carts = cartRepo.getCartsByUserId(user_id);

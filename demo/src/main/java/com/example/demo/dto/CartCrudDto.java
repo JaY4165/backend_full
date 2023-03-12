@@ -1,8 +1,7 @@
 package com.example.demo.dto;
 
-
-public class CartDto {
-
+public class CartCrudDto {
+	
 	private int id;
 	private String food_name;
 	private String food_type;
@@ -10,6 +9,7 @@ public class CartDto {
 	private int food_price;
 	private int food_quantity;
 	private boolean checkedout;
+	private int user_id;
 	
 	
 	public int getId() {
@@ -48,16 +48,22 @@ public class CartDto {
 	public void setFood_quantity(int food_quantity) {
 		this.food_quantity = food_quantity;
 	}
-	public boolean getCheckedout() {
+	public boolean isCheckedout() {
 		return checkedout;
 	}
 	public void setCheckedout(boolean checkedout) {
 		this.checkedout = checkedout;
 	}
-	public CartDto() {
+	
+	public int getUser_id() {
+		return user_id;
 	}
-	public CartDto(int id, String food_name, String food_type, String food_image, int food_price, int food_quantity,boolean checkedout ) 
-	{
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+	public CartCrudDto(int id, String food_name, String food_type, String food_image, int food_price, int food_quantity,
+			boolean checkedout, int user_id) {
+		super();
 		this.id = id;
 		this.food_name = food_name;
 		this.food_type = food_type;
@@ -65,6 +71,10 @@ public class CartDto {
 		this.food_price = food_price;
 		this.food_quantity = food_quantity;
 		this.checkedout = checkedout;
+		this.user_id = user_id;
+	}
+	public CartCrudDto() {
+		super();
 	}
 	
 	

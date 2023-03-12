@@ -46,9 +46,6 @@ public class CartEntity {
 	@Column(name = "checkedout")
 	private boolean checkedout;
 	
-	@Column(name = "food_added_on")
-    @Temporal(TemporalType.DATE)
-    private Date food_added_on;
 
 
 	public int getId() {
@@ -115,21 +112,9 @@ public class CartEntity {
 		this.checkedout = checkedout;
 	}
 	
-	public Date getFood_added_on() {
-		return food_added_on;
-	}
-
-	public void setFood_added_on(Date food_added_on) {
-		this.food_added_on = food_added_on;
-	}
-
-
-	public CartEntity() {
-		
-	}
 
 	public CartEntity(int id, String food_name, String food_type, String food_image, int food_price, int food_quantity,
-			UsersEntity user, boolean checkedout, Date food_added_on) {
+			UsersEntity user, boolean checkedout) {
 		this.id = id;
 		this.food_name = food_name;
 		this.food_type = food_type;
@@ -138,7 +123,10 @@ public class CartEntity {
 		this.food_quantity = food_quantity;
 		this.user = user;
 		this.checkedout = checkedout;
-		this.food_added_on = food_added_on;
+	}
+
+	public CartEntity() {
+		super();
 	}
 
 	
