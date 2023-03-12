@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.dto.ShoppingDto;
@@ -31,5 +32,5 @@ public class ShoppingController {
         shoppingResponse.setMessage("Food items fetched successfully");
         return ResponseEntity.ok(shoppingResponse);
     }
-
+	
 }
