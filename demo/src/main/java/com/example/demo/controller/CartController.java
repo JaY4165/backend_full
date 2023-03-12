@@ -9,12 +9,9 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.demo.dto.CartCrudDto;
 import com.example.demo.dto.CartDto;
 import com.example.demo.response.CartCrudResponse;
 import com.example.demo.response.CartResponse;
@@ -55,7 +52,7 @@ public class CartController {
 
 	@DeleteMapping("/{id}")
 	public CartCrudResponse deleteItem(@PathVariable int id) {
-		cartCrudService.deleteItem(id);
+		cartCrudService.deleteById(id);
 		CartCrudResponse response = new CartCrudResponse();
 		response.setStatus(200);
 	    response.setMessage("Item deleted from cart");

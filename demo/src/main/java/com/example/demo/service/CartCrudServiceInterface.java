@@ -8,5 +8,5 @@ public interface CartCrudServiceInterface {
 
     CartCrudDto updateItem(int id , int quantity);
 	 
-	void deleteItem(int id);
+	void deleteById(int id);
 }

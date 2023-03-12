@@ -37,7 +37,7 @@ public class CartCrudServiceImpl implements CartCrudServiceInterface{
 
 	 
 	    @Override
-	    public void deleteItem(int id) {
+	    public void deleteById(int id) {
 	        if (!cartCrudRepo.existsById(id)) {
 	            throw new CommonException(202,"Cart item not found");
 	        }
